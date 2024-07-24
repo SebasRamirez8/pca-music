@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title class="ion-text-center">Iniciar Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <figure class="ion-text-center">
+      <img src="assets/images/profile.png" alt="" style="max-width: 150px; border-radius: 75px;">
+    </figure>
+    <form [formGroup]="loginForm" (ngSubmit)="(loginUser(loginForm.value))">
+  
+      <ion-item>
+        <ion-input label="email" labelPlacement="floating" placeholder="Correo Electrónico" formControlName="email" type="email"></ion-input>
+      </ion-item>
+  
+      <div>
+        <ng-container *ngFor="let validation of validation_message.email">
+          <div *ngIf="(
+          loginForm.get('email')?.hasError(validation.type) 
+          && loginForm.get('email')?.dirty)">
+            <p>{{ validation.message }}</p>
+          </div>
+        </ng-container>
+      </div>
+  
+      <ion-item>
+        <ion-input label="password" labelPlacement="floating" placeholder="contraseña" formControlName="password" type="password"></ion-input>
+      </ion-item>
+  
+      <div>
+        <ng-container *ngFor="let validation of validation_message.password">
+          <div *ngIf="(
+          loginForm.get('password')?.hasError(validation.type) 
+          && loginForm.get('password')?.dirty)">
+            <p>{{ validation.message }}</p>
+          </div>
+        </ng-container>
+      </div>
+  
+      <ion-button class="login-button" expand="block" class="ion-margin-top" type="submit" [disabled]="!loginForm.valid">
+        Iniciar Sesión
+      </ion-button>
+    </form>
+    
+  </ion-content>
+  

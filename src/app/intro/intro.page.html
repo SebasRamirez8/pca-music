@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>PCAMUSIC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="library"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="radio"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-bg-color">
+  
+  <swiper-container class="sp-bg-color">
+
+    <swiper-slide>
+        <!-- Sección de "Tu biblioteca" -->
+      <div class="title-container">
+        <h2>Tu biblioteca</h2>
+        <ion-icon class="close-button" name="close-outline" (click)="close()"></ion-icon>
+      </div>
+      <ion-grid>
+        <ion-row>
+            <ion-card *ngFor="let slide of slides">
+              <img src="{{slide.image}}"/>
+              <ion-card-content>
+                <ion-card-title>{{slide.title}}</ion-card-title>
+              </ion-card-content>
+            </ion-card>
+        </ion-row>
+      </ion-grid>
+    </swiper-slide>
+
+    <swiper-slide>
+        <!-- Sección de recomendaciones personalizadas -->
+        <div class="title-container">
+          <h2>Recomendado para ti</h2>
+          <ion-icon class="close-button" name="close-outline" (click)="close()"></ion-icon>
+        </div>
+      <ion-grid>
+        <ion-row>
+          
+            <ion-card>
+              <img />
+              <ion-card-content>
+                <ion-card-title>title</ion-card-title>
+              </ion-card-content>
+            </ion-card>
+          
+        </ion-row>
+      </ion-grid>
+    </swiper-slide>
+
+    <swiper-slide>
+      <h1>titulo del slide 3</h1>
+      <p>Hola soy un parrafo del slide 3</p>
+    </swiper-slide>
+
+    <swiper-slide>
+      <h1>titulo del slide 4</h1>
+      <ion-icon class="cool-title" name="football"></ion-icon>
+      <p>Hola soy un parrafo del slide 4</p>
+    </swiper-slide>
+
+  </swiper-container>
+
+</ion-content>
+
