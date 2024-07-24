@@ -1,10 +1,12 @@
 <ion-header>
     <ion-toolbar>
-      <ion-title class="ion-text-center">Iniciar Sesión</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content class="ion-padding">
+
+    <h2 class="ion-text-center">Iniciar Sesión</h2>
+
     <figure class="ion-text-center">
       <img src="assets/images/profile.png" alt="" style="max-width: 150px; border-radius: 75px;">
     </figure>
@@ -42,6 +44,10 @@
         Iniciar Sesión
       </ion-button>
     </form>
+
+    <ion-button class="login-button" expand="block" class="ion-margin-top" type="submit" (click)="register()">
+      Registrarse
+    </ion-button>
     
   </ion-content>
   

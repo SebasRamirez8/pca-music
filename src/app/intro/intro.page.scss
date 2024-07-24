@@ -1,7 +1,7 @@
 swiper-container {
     width: 80%;
     height: 100%;
-  }
+}
   
 .custom-bg-color {
     --background: #0A0A0A;
@@ -26,4 +26,9 @@ img {
   
 h2 {
     margin-left: 1rem;
+}
+
+ion-row {
+    display: flex;
+    justify-content: center;
 }
