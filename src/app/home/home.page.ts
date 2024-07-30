@@ -20,26 +20,25 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.artistsJson = this.musicService.getArtistsJson().artists;
-    console.log("Json", this.artistsJson);
+    // console.log("Json", this.artistsJson);
     this.musicService.getArtists().subscribe((data: any) => {
       this.artists = data
-      console.log(this.artists)
+      // console.log(this.artists)
     })
   }
 
-  async showSongs(artists: any) {
-    console.log(artists)
-    const modal = await this.modalController.create(
-      {
+  async showSongs(artist: any) {
+    this.musicService.getArtistTracks(artist.id).subscribe(async (songs: any) => {
+      const modal = await this.modalController.create({
         component: SongModalPage,
         componentProps: {
-          name: artists.name,
-          id: artists.id,
-          
+          name: artist.name,
+          id: artist.id,
+          songs: songs
         }
-      }
-    );
-    modal.present();
+      });
+      await modal.present();
+    });
   }
 
 }

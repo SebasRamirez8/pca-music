@@ -12,5 +12,11 @@
 </ion-header>
 
 <ion-content>
-  {{artists_id}}
+  <ion-list>
+    <ion-item *ngFor="let song of songs; index as i" (click)="selectSong(song)">
+      <ion-label>
+        {{song.name}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
