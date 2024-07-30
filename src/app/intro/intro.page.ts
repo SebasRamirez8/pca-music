@@ -40,7 +40,7 @@ export class IntroPage  {
 
   close() {
     this.storage.set("IsIntroShowed", true);
-    this.router.navigateByUrl("/home");
+    this.router.navigateByUrl("/menu/home");
   }
 
 }

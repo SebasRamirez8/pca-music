@@ -1,8 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 <ion-content class="custom-bg-color">
 
-    <div class="title-container">
-        <h1>Hola, estas en PcaMusic</h1>
-        <ion-icon class="close-button" name="musical-notes" (click)="intro()"></ion-icon>
-    </div>
+        <h1>Artistas</h1>
+        <swiper-container slides-per-view="3" speed="400">
+            <swiper-slide *ngFor="let artists of artists">
+                <ion-avatar (click)="showSongs(artists)">
+                    <img src="{{artists.image}}" />
+                </ion-avatar>
+                <span>{{artists.name}}</span>
+            </swiper-slide>
+        </swiper-container>
+
+        <!-- <ion-icon class="close-button" name="musical-notes" (click)="intro()"></ion-icon> -->
 
 </ion-content>
