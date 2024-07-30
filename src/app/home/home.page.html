@@ -21,11 +21,11 @@
 
 </ion-content>
 
-<!-- <ion-footer>
-    <ion-text color="danger">
-        <h2>Aquí aparecerá nuestra canción</h2>
+<ion-footer>
+    <ion-text color="danger" *ngIf="!song.name">
+        Aquí aparecerá nuestra canción
     </ion-text>
-    <ion-text color="primary">
-        <h2>{{song.name}}</h2>
+    <ion-text color="primary" *ngIf="song.name">
+        {{song.name}}
     </ion-text>
-</ion-footer> -->
+</ion-footer>
